@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{album}}{% endblock title %}
+{% block content %}
+    <div class="container">
+        <p style="font-size: 1.7em; margin-top: 1em; margin-bottom: 1em;" class= "text-center"><strong>{{ album | capfirst }}</strong></p>
+        <div class="d-flex justify-content-center">
+            <img src="{{ album.cover.url }}" alt="{{album}}" style="width:300; height:300px; margin-top: 1em;">
+        </div>
+        <h3>Details:</h3>
+        <ul class="list-group" style="color:black;">
+            <li class="list-group-item"><strong><img src="{% static 'icon2.svg' %}" alt="Pokeball" style="width:24px; height:24px; margin-right:10px;">Album title:</strong> {{ album }}</li> 
+            <li class="list-group-item"><strong><img src="{% static 'icon2.svg' %}" alt="Pokeball" style="width:24px; height:24px; margin-right:10px;">Artist:</strong> {{ album.artist }}</li> 
+            <li class="list-group-item"><strong><img src="{% static 'icon2.svg' %}" alt="Pokeball" style="width:24px; height:24px; margin-right:10px;">Genre:</strong> {{ album.get_genre_display }}</li>
+            <li class="list-group-item"><strong><img src="{% static 'icon2.svg' %}" alt="Pokeball" style="width:24px; height:24px; margin-right:10px;">Release Year:</strong> {{ album.release_year }}</li>
+        </ul>
+        <div class="d-flex justify-content-center">
+            <a href="/album">
+                <button style="margin-top: 3em; margin-bottom: 3em;" class="btn btn-outline-primary btn-lg btn-block">
+                    <h6>Return</h6>
+                </button>
+            </a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<p style="font-size: 1.7em; margin-top: 1em; margin-bottom: 1em;" class= "text-center">Choose what you want to see:</p>
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <a href="album/">
+                            <button class="btn btn-outline-primary btn-lg btn-block">
+                                <h3>Albums<h3>
+                            </button>
+                        </a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="artist/">
+                        <button class="btn btn-outline-primary btn-lg btn-block">
+                            <h3>Artists<h3>
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}    

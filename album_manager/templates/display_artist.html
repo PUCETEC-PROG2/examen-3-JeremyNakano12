@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{artist}}{% endblock title %}
+{% block content %}
+    <div class="container">
+        <p style="font-size: 1.7em; margin-top: 1em;" class= "text-center"><strong>{{ artist | capfirst }}</strong></p>
+        <div class="d-flex justify-content-center">
+            <img src="{{ artist.picture.url }}" alt="{{artist}}" style="width:300; height:300px;">
+        </div>
+        <h3>Details:</h3>
+        <ul class="list-group" style="color:black;">
+            <li class="list-group-item"><img src="{% static 'microphone.png' %}" alt="Microphone" style="width:24px; height:24px; margin-right:10px;"><strong>Artist name:</strong> {{ artist }}</li>
+            <li class="list-group-item"><img src="{% static 'microphone.png' %}" alt="Microphone" style="width:24px; height:24px; margin-right:10px;"><strong>Country:</strong> {{ artist.country }}</li>
+        </ul> 
+        <div class="d-flex justify-content-center">
+            <a href="/artist">
+                <button style="margin-top: 3em; margin-bottom: 3em;" class="btn btn-outline-primary btn-lg btn-block">
+                    <h6>Return</h6>
+                </button>
+            </a>
+        </div>
+    </div>
+{% endblock content %}
